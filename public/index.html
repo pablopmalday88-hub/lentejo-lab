@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🐕 Lentejo Lab</title>
+  <title>Lentejo Lab</title>
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Login Screen -->
   <div id="login-screen" class="login-screen">
     <div class="login-box">
-      <div class="logo">🐕</div>
+      <div class="logo"><img src="logo.svg" alt="Lentejo" /></div>
       <h1>Lentejo Lab</h1>
       <p class="subtitle">Acceso privado</p>
       <input type="password" id="password-input" placeholder="Contraseña" />
@@ -23,7 +24,10 @@
   <div id="app" class="app hidden">
     <header class="header">
       <div class="header-content">
-        <h1 class="logo-text">🐕 Lentejo Lab</h1>
+        <div class="header-logo">
+          <img src="logo-icon.svg" alt="Lentejo" class="header-logo-img" />
+          <h1 class="logo-text">Lentejo Lab</h1>
+        </div>
         <button id="logout-btn" class="logout-btn">Salir</button>
       </div>
     </header>

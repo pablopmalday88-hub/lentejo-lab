@@ -73,9 +73,14 @@ body::before {
 }
 
 .login-box .logo {
-  font-size: 4rem;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   animation: float 3s ease-in-out infinite;
+}
+
+.login-box .logo img {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 0 20px rgba(183, 148, 246, 0.5));
 }
 
 @keyframes float {
@@ -177,12 +182,25 @@ body::before {
   align-items: center;
 }
 
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-logo-img {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 10px rgba(183, 148, 246, 0.4));
+}
+
 .logo-text {
-  font-size: 2rem;
+  font-size: 1.8rem;
   background: linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  margin: 0;
 }
 
 .logout-btn {
