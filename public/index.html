@@ -4,326 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🐕 Lentejo Lab</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --bg: #0f0f0f;
-      --surface: #1a1a1a;
-      --border: #2a2a2a;
-      --text: #e0e0e0;
-      --text-dim: #888;
-      --accent: #ff6b35;
-      --accent-hover: #ff8555;
-      --success: #4ade80;
-      --danger: #ef4444;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, var(--accent), var(--success));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .subtitle {
-      color: var(--text-dim);
-      font-size: 0.95rem;
-    }
-
-    .tabs {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 30px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .tab {
-      padding: 12px 24px;
-      background: none;
-      border: none;
-      color: var(--text-dim);
-      cursor: pointer;
-      font-size: 1rem;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s;
-    }
-
-    .tab:hover {
-      color: var(--text);
-    }
-
-    .tab.active {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    .add-form {
-      background: var(--surface);
-      padding: 24px;
-      border-radius: 12px;
-      margin-bottom: 30px;
-      border: 1px solid var(--border);
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--text-dim);
-      font-size: 0.9rem;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 10px 14px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text);
-      font-size: 0.95rem;
-      font-family: inherit;
-    }
-
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
-
-    button {
-      padding: 10px 20px;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-
-    button:hover {
-      background: var(--accent-hover);
-    }
-
-    .items-grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .item-card {
-      background: var(--surface);
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      position: relative;
-      transition: border-color 0.2s;
-    }
-
-    .item-card:hover {
-      border-color: var(--accent);
-    }
-
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      margin-bottom: 12px;
-    }
-
-    .item-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .item-meta {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
-
-    .badge {
-      padding: 4px 10px;
-      background: var(--border);
-      border-radius: 4px;
-      font-size: 0.8rem;
-      color: var(--text-dim);
-    }
-
-    .badge.category {
-      background: var(--accent);
-      color: white;
-    }
-
-    .item-content {
-      color: var(--text-dim);
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .item-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    .item-link:hover {
-      text-decoration: underline;
-    }
-
-    .delete-btn {
-      background: transparent;
-      color: var(--danger);
-      padding: 4px 8px;
-      font-size: 0.9rem;
-    }
-
-    .delete-btn:hover {
-      background: var(--danger);
-      color: white;
-    }
-
-    .empty-state {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-dim);
-    }
-
-    .empty-state-icon {
-      font-size: 3rem;
-      margin-bottom: 16px;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-      
-      .tabs {
-        overflow-x: auto;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>🐕 Lentejo Lab</h1>
-      <p class="subtitle">Tu espacio para capturar ideas y posts interesantes</p>
+  <!-- Login Screen -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-box">
+      <div class="logo">🐕</div>
+      <h1>Lentejo Lab</h1>
+      <p class="subtitle">Acceso privado</p>
+      <input type="password" id="password-input" placeholder="Contraseña" />
+      <button id="login-btn">Entrar</button>
+      <div id="login-error" class="error-message"></div>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="app hidden">
+    <header class="header">
+      <div class="header-content">
+        <h1 class="logo-text">🐕 Lentejo Lab</h1>
+        <button id="logout-btn" class="logout-btn">Salir</button>
+      </div>
     </header>
 
-    <div class="tabs">
-      <button class="tab active" data-tab="ideas">💡 Ideas</button>
-      <button class="tab" data-tab="posts">🔖 Posts Guardados</button>
+    <!-- Stats Dashboard -->
+    <div class="stats-dashboard">
+      <div class="stat-card">
+        <div class="stat-icon">💡</div>
+        <div class="stat-value" id="stat-active">0</div>
+        <div class="stat-label">Activas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">✅</div>
+        <div class="stat-value" id="stat-completed">0</div>
+        <div class="stat-label">Completadas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📊</div>
+        <div class="stat-value" id="stat-percentage">0%</div>
+        <div class="stat-label">Ejecutadas</div>
+      </div>
     </div>
 
-    <!-- IDEAS TAB -->
-    <div class="tab-content active" id="ideas">
-      <div class="add-form">
-        <h3 style="margin-bottom: 16px;">Nueva Idea</h3>
-        <form id="idea-form">
-          <div class="form-group">
-            <label>Título (opcional)</label>
-            <input type="text" name="title" placeholder="Ej: Nueva funcionalidad para TribuClaw">
-          </div>
-          <div class="form-group">
-            <label>Contenido</label>
-            <textarea name="content" placeholder="Describe tu idea..." required></textarea>
-          </div>
-          <div class="form-group">
-            <label>Categoría</label>
-            <select name="category">
-              <option value="general">General</option>
-              <option value="tribuclaw">TribuClaw</option>
-              <option value="openclaw">OpenClaw</option>
-              <option value="producto">Producto</option>
-              <option value="marketing">Marketing</option>
-              <option value="contenido">Contenido</option>
-            </select>
-          </div>
-          <button type="submit">Guardar Idea</button>
-        </form>
+    <!-- Controls -->
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="🔍 Buscar ideas..." />
       </div>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="active">Activas</button>
+        <button class="filter-btn" data-filter="completed">Historial</button>
+      </div>
+      <div class="category-filters" id="category-filters"></div>
+    </div>
 
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="ideas">💡 Ideas</button>
+      <button class="tab" data-tab="posts">🔖 Posts</button>
+    </div>
+
+    <!-- Ideas View -->
+    <div class="tab-content active" id="ideas">
       <div id="ideas-list" class="items-grid"></div>
     </div>
 
-    <!-- POSTS TAB -->
+    <!-- Posts View -->
     <div class="tab-content" id="posts">
-      <div class="add-form">
-        <h3 style="margin-bottom: 16px;">Guardar Post</h3>
-        <form id="post-form">
-          <div class="form-group">
-            <label>URL del post</label>
-            <input type="url" name="url" placeholder="https://twitter.com/..." required>
-          </div>
-          <div class="form-group">
-            <label>Título (opcional)</label>
-            <input type="text" name="title" placeholder="Título del post">
-          </div>
-          <div class="form-group">
-            <label>Descripción / Notas</label>
-            <textarea name="description" placeholder="¿Por qué es interesante?"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Plataforma</label>
-            <select name="platform">
-              <option value="twitter">Twitter</option>
-              <option value="linkedin">LinkedIn</option>
-              <option value="tiktok">TikTok</option>
-              <option value="youtube">YouTube</option>
-              <option value="other">Otra</option>
-            </select>
-          </div>
-          <button type="submit">Guardar Post</button>
-        </form>
-      </div>
-
       <div id="posts-list" class="items-grid"></div>
     </div>
   </div>
